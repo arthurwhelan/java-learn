@@ -7,7 +7,7 @@ package com.walking.lesson3_type_casting_conditional_operators.task1;
 
 import java.util.Scanner;
 
-public class NumberOperation {
+public class NumberOperations {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
