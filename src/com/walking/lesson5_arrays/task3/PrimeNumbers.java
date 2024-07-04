@@ -4,8 +4,6 @@ package com.walking.lesson5_arrays.task3;
 // Простое число – положительное целое число, которое делится без остатка лишь на себя и на 1. 1 не является простым числом.
 // Вывести в консоль сумму всех элементов полученного массива.
 
-import java.util.Arrays;
-
 public class PrimeNumbers {
     public static void main(String[] args) {
         int[] primeNumbers = new int[10];
