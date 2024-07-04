@@ -6,10 +6,10 @@ package com.walking.lesson5_arrays.task1;
 
 public class CharArrayWithoutString {
     public static void main(String[] args) {
-        char[] charArray = {'J', 'o', 'h', 'n'};
+        char[] name = {'J', 'o', 'h', 'n'};
 
-        for (char charElem : charArray) {
-            System.out.print(charElem);
+        for (char element : name) {
+            System.out.print(element);
         }
     }
 }

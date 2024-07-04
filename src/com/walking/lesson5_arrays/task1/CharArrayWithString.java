@@ -5,15 +5,15 @@ package com.walking.lesson5_arrays.task1;
 
 public class CharArrayWithString {
     public static void main(String[] args) {
-        char[] charArray = {'J', 'o', 'h', 'n'};
+        char[] name = {'J', 'o', 'h', 'n'};
 
-        String charAcc = "";
+        String acc = "";
 
-        for (char charElem : charArray) {
-            charAcc += charElem;
+        for (char element : name) {
+            acc += element;
         }
 
-        System.out.println(charAcc);
+        System.out.println(acc);
     }
 }
 
