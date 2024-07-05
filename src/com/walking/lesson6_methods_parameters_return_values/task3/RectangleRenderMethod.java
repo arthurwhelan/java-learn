@@ -31,6 +31,7 @@ public class RectangleRenderMethod {
         if (validation(length, width)) {
             String lengthElement = getLengthLine(length);
             String widthElement = getWidthLine(width, length);
+
             System.out.println(lengthElement + widthElement + lengthElement);
         }
     }
