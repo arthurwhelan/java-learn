@@ -13,7 +13,22 @@ public class PrimeNumbers {
         int value = 3;
 
         for (int i = 0; i < primeNumbers.length; i++) {
+            boolean isPrime = true;
 
+            for (int j = 0; j <= i; j++) {
+
+                if (value % primeNumbers[j] == 0) {
+                    isPrime = false;
+                    i -= 1;
+                    break;
+                }
+            }
+
+            if (isPrime && primeNumbers[primeNumbers.length - 1] == 0) {
+                primeNumbers[i + 1] = value;
+            }
+
+            value += 2;
         }
 
         int sumNumbers = 0;
