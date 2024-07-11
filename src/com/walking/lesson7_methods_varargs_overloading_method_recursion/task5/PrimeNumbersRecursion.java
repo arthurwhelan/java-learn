@@ -11,48 +11,45 @@ public class PrimeNumbersRecursion {
         primeNumbers[0] = 2;
 
         for (int i = 1; i < primeNumbers.length; i++) {
-            int addingNumber = i == 1 ? primeNumbers[i - 1] + 1 : primeNumbers[i - 1] + 2;
+            int addNumber = i == 1 ? primeNumbers[i - 1] + 1 : primeNumbers[i - 1] + 2;
 
-            primeNumbers[i] = getPrimeNumber(i, addingNumber, primeNumbers);
+            primeNumbers[i] = getPrimeNumber(i, addNumber, primeNumbers);
         }
 
-        System.out.println(getSum(primeNumbers));
+        System.out.println(sum(primeNumbers));
     }
 
-    static int getPrimeNumber(int index, int addingNumber, int[] primeNumbers) {
-        boolean isPrime = isPrime(index, addingNumber, primeNumbers);
+    static int getPrimeNumber(int index, int addNumber, int[] primeNumbers) {
+        boolean isPrime = isPrime(index, addNumber, primeNumbers);
 
         if (isPrime) {
-            return addingNumber;
+            return addNumber;
         }
 
-        addingNumber += 2;
+        addNumber += 2;
 
-        return getPrimeNumber(index, addingNumber, primeNumbers);
+        return getPrimeNumber(index, addNumber, primeNumbers);
     }
 
     static boolean isPrime(int index, int addValue, int[] primeNumbers) {
-        boolean isPrime = true;
-
         for (int j = 0; j < index; j++) {
             if (addValue % primeNumbers[j] == 0) {
-                isPrime = false;
-                break;
+                return false;
             }
         }
 
-        return isPrime;
+        return true;
     }
 
-    static int getSum(int[] primeNumbers) {
+    static int sum(int[] primeNumbers) {
         int counter = 0;
-        return getSum(primeNumbers, counter);
+        return sum(primeNumbers, counter);
     }
 
-    static int getSum(int[] primeNumbers, int counter) {
+    static int sum(int[] primeNumbers, int counter) {
 
-        if (!(counter == primeNumbers.length - 1)) {
-            return primeNumbers[counter] + getSum(primeNumbers, ++counter);
+        if (counter != primeNumbers.length - 1) {
+            return primeNumbers[counter] + sum(primeNumbers, ++counter);
         }
 
         return primeNumbers[counter];
