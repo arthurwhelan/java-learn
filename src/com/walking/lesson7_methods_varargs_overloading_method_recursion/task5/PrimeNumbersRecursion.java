@@ -11,7 +11,9 @@ public class PrimeNumbersRecursion {
         primeNumbers[0] = 2;
 
         for (int i = 1; i < primeNumbers.length; i++) {
-            int addNumber = i == 1 ? primeNumbers[i - 1] + 1 : primeNumbers[i - 1] + 2;
+            int addNumber = i == 1
+                    ? primeNumbers[i - 1] + 1
+                    : primeNumbers[i - 1] + 2;
 
             primeNumbers[i] = getPrimeNumber(i, addNumber, primeNumbers);
         }
