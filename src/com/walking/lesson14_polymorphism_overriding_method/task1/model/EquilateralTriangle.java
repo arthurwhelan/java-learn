@@ -1,22 +1,22 @@
 package com.walking.lesson14_polymorphism_overriding_method.task1.model;
 
-public class EquilateralRectangle extends EquilateralFigure {
+public class EquilateralTriangle extends EquilateralFigure {
     private static final String HORIZONTAL_SYMBOL = "-";
     private static final String LEFT_SIDE_SYMBOL = "/";
     private static final String RIGHT_SIDE_SYMBOL = "\\";
 
-    public EquilateralRectangle(int sideLength) {
+    public EquilateralTriangle(int sideLength) {
         super(sideLength);
     }
 
     public String createFigure() {
-        String twoSide = getLefElement(sideLength);
+        String twoSide = getTwoSide(sideLength);
         String thirdSide = getHorizontalElement(sideLength);
 
         return twoSide + thirdSide;
     }
 
-    private String getLefElement(int sideLength) {
+    private String getTwoSide(int sideLength) {
         String leftElement = EMPTY_STRING;
 
         for (int i = 0; i < sideLength; i++) {
@@ -41,7 +41,7 @@ public class EquilateralRectangle extends EquilateralFigure {
         return rightElement + RIGHT_SIDE_SYMBOL;
     }
 
-    private String getHorizontalElement (int sideLength) {
+    private String getHorizontalElement(int sideLength) {
         String horizontalElement = EMPTY_STRING;
 
         for (int i = 0; i < sideLength * 2; i++) {
