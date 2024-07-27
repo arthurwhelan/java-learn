@@ -1,11 +1,6 @@
-package com.walking.lesson14.polymorphism.task2.model;
+package com.walking.lesson25.nestedclass.task2.anonymusclass.model;
 
-public class Animal {
+public abstract class Animal {
 
-    protected Animal() {
-    }
-
-    public void sound() {
-        System.out.println("Animal voice");
-    }
+    public abstract void sound();
 }

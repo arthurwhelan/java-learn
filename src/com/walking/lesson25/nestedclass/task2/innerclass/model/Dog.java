@@ -1,4 +1,4 @@
-package com.walking.lesson25.nestedclass.task2.anonymusclass.model;
+package com.walking.lesson25.nestedclass.task2.innerclass.model;
 
 public class Dog extends Animal {
     public static final String DOG_SOUND = "Woof";

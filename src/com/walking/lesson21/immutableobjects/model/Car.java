@@ -1,35 +1,34 @@
-package com.walking.lesson19.objectmethods.model;
+package com.walking.lesson21.immutableobjects.model;
 
 import java.util.Objects;
 
 public class Car {
-    private final String model;
-    private final String color;
-    private final int number;
+    private int number;
+    private String color;
+    private final CarIdentifier carIdentifier;
 
-    public Car(String model, String color, int number) {
-        this.model = model;
-        this.color = color;
+
+    public Car(String model, int year, String color, int number) {
+        this(new CarIdentifier(model, year), number, color);
+    }
+
+    public Car(CarIdentifier carIdentifier, int number, String color) {
+        this.carIdentifier = carIdentifier;
         this.number = number;
+        this.color = color;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Car car = (Car) o;
-        return Objects.equals(model, car.model) && Objects.equals(color, car.color);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(model, color) * 31;
+    public CarIdentifier getCarIdentifier() {
+        return carIdentifier;
     }
 
     @Override
     public String toString() {
-        return "model='" + model + '\'' +
-                ", color='" + color + '\'' +
-                ", number=" + number;
+        return """
+                model: %s
+                year: %d
+                color: %s
+                number: %d
+                """.formatted(carIdentifier.getModel(), carIdentifier.getYear(), color, number);
     }
 }

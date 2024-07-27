@@ -1,4 +1,4 @@
-package com.walking.lesson25.nestedclass.task1.innerclass;
+package com.walking.lesson25.nestedclass.task1.innerstaticclass;
 
 public interface EquilateralShape {
     String SPACE_SYMBOL = " ";

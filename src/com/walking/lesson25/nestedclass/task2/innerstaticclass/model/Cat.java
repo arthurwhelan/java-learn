@@ -1,4 +1,4 @@
-package com.walking.lesson25.nestedclass.task2.innerclass.model;
+package com.walking.lesson25.nestedclass.task2.innerstaticclass.model;
 
 public class Cat extends Animal {
     public static final String CAT_SOUND = "Meow";

@@ -1,6 +1,7 @@
-package com.walking.lesson19.objectmethods.service;
+package com.walking.lesson21.immutableobjects.service;
 
-import com.walking.lesson19.objectmethods.model.Car;
+import com.walking.lesson21.immutableobjects.model.Car;
+import com.walking.lesson21.immutableobjects.model.CarIdentifier;
 
 public class CarService {
     private final Car[] cars;
@@ -9,12 +10,13 @@ public class CarService {
         this.cars = cars;
     }
 
-    public Car findCar(Car car) {
+    public Car findCar(CarIdentifier carIdentifier) {
         for (Car c : cars) {
-            if (c.hashCode() == car.hashCode() && c.equals(car)) {
+            if (c.getCarIdentifier().equals(carIdentifier)) {
                 return c;
             }
         }
-        return null;
+
+        throw new NullPointerException();
     }
 }

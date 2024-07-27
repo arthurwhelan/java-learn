@@ -1,4 +1,4 @@
-package com.walking.lesson25.nestedclass.task1.innerclass;
+package com.walking.lesson25.nestedclass.task1.innerstaticclass;
 
 // Реализуйте задачу https://github.com/KFalcon2022/practical-tasks/tree/master/src/com/walking/lesson16_abstract_class_interface/task1_interface
 // используя внутренние классы;
@@ -27,11 +27,11 @@ public class Main {
 
         scanner.close();
 
-        String shapeString = new Main().createShapeString(sideLength, selectedShape);
+        String shapeString = createShapeString(sideLength, selectedShape);
         System.out.println(shapeString);
     }
 
-    private String createShapeString(int sideLength, int selectedShape) {
+    private static String createShapeString(int sideLength, int selectedShape) {
         EquilateralShape equilateralShape = switch (selectedShape) {
             case 1 -> new Square(sideLength);
             case 2 -> new EquilateralTriangle(sideLength);
@@ -41,7 +41,7 @@ public class Main {
         return equilateralShape.createShapeString();
     }
 
-    private class EquilateralTriangle implements EquilateralShape {
+    private static class EquilateralTriangle implements EquilateralShape {
         private final int sideLength;
 
 
@@ -98,7 +98,7 @@ public class Main {
         }
     }
 
-    class Square implements EquilateralShape {
+    static class Square implements EquilateralShape {
         private final int sideLength;
 
         public Square(int sideLength) {

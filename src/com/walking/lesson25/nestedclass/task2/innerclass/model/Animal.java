@@ -1,4 +1,4 @@
-package com.walking.lesson25.nestedclass.task2.anonymusclass.model;
+package com.walking.lesson25.nestedclass.task2.innerclass.model;
 
 public abstract class Animal {
 
